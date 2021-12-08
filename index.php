@@ -8,7 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test</h1>
-    <h3>Hello</h3>
+
+<?php
+  $sql = " ";
+  $number1 = 3;
+  $number2 = 5;
+  echo "$number1 + $number2";
+
+?>
+
 </body>
 </html>
