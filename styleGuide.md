@@ -3,17 +3,23 @@
 ## Naming Format
  **camelCase** should be applied to all instances that require naming: files, variables, and functions, etc.
 ```
+// Correct:
 mainPage.php
 $numberOfStudents = 20;
 getVote();
+
+// Incorrect:
+mainpage.php 
+$NumberOfStudents = 20;
+get_Vote();
 ```
 ## Closing Tags
 A closing tag should accompany all opening tags; make sure that they are lined up as well. 
 
-*Tip: If your text editor does not do it automatically, always write out the closing tags. Also applies for braces or parenthesis*
+*Tip: If your text editor does not do it automatically, always write out the closing tags. Also applies for braces or parenthesis.*
 
 ### End of File (EOF)
-Every file should contain one blank space and the very end to allow for easy expansion, if necessary
+Every file should contain one blank space and the very end to allow for easy expansion, if necessary.
 ```php
 <?php
 
@@ -40,8 +46,8 @@ exampleFunction(); // This function serves as an example for my style guide
 * Statements MUST be placed on their own line and MUST end with a semicolon
     * e.g. ``` welcomeMessage(); ```
 
-* Operators MUST be surrounded by a space
-    * e.g. ``` $difference= 4 - 1; ```
+* Operators MUST be surrounded by a space in all languages, with an exception for HTML
+    * e.g. ``` $difference = 4 - 1; ```
 
 * Unary operators MUST be *attached* to their variable or integer
     * e.g. ``` $index++, --$index ```
@@ -104,7 +110,7 @@ Also, indent them if they are child elements of a block, list, or table element.
 
 ### Quotation Marks
 
-When making class or id names for HTML elements, use double quotation marks("") instead of single quotes ('')
+When making class or id names for HTML elements, use double quotation marks("") instead of single quotes('').
 
 ```html
 <div class="container"></div>
@@ -150,7 +156,7 @@ const foo = "bar";
 let num = 2;
 ```
 ### Functions
-Functions should be declared using the ES6 arrow function
+Functions should be declared using the ES6 arrow function.
 
 ```js
 let addNumbers = (num1, num2) => {
@@ -158,7 +164,7 @@ let addNumbers = (num1, num2) => {
 }
 ```
 ### Array Formatting
-Elements when declaring an array should be followed by a linebreak
+Elements when declaring an array should be followed by a linebreak.
 
 ```js
 const animals = [
@@ -167,16 +173,71 @@ const animals = [
     "lion"
 ]; 
 ```
-
-###
 ## PHP
 
+### Open Tag and Closing Tag
+The opening tag should be followed by an empty line and the closing tag should be proceeded by an empty line.
+
+```php
+<?php 
+
+echo "hello world";
+
+?>
+```
+
+### Variable Naming of Values from SQL
+Variables that store values from an SQL database should indicate what database it is coming from.
+
+```php
+<?php
+
+while ($row = mysqli_fetch_array($rs)) {
+  $abkConstituentTypeID = $row['constituentTypeID'];
+  $abkConstituentType = $row['constituentType'];
+					
+  echo "<option value = '$abkConstituentTypeID'>$abkConstituentType</option>";
+}
+
+?>
+```
+
+### SQL Queries
+SQL queries should still follow the [SQL guidelines](#SQL) below.
+
+```php
+<?php
+
+$sql = "UPDATE abk_constituents
+	  SET lastName = '$lastName',
+	      firstName = '$firstName',
+	      address = '$address',
+	      city = '$city',
+	      stateID = '$stateID',
+	      zipCode = '$zipCode',
+	      constituentTypeID = '$constituentTypeID'
+	  WHERE constituentID = $constituentID";
+
+?>
+```
+
+###
 ## SQL
 Root keywords should always be capitalized (SELECT, FROM, WHERE, AS, booleans, etc.)
 
 ```sql
-SELECT * FROM allConstituents AS ac WHERE constituentID = 3;
+SELECT * 
+FROM allConstituents AS ac 
+   WHERE constituentID = 3;
 
 ```
-
+### Selecting Multiple Columns
+When selecting multiple column, a linebreak should be added after every column
+```sql
+SELECT 
+  productName,
+  productPrice,
+  quantity
+FROM products
+```
 Thanks! :thumbsup:
