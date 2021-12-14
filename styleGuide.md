@@ -73,39 +73,21 @@ Every HTML file should include this basic heading. if you are using VScode, you 
     <title>Document</title>
 </head>
 <body>
-   
+   <!-- CODE HERE -->
 </body>
 </html>
 ```
-
-### `type` attributes (Google)
-
-Omit type attributes for style sheets and scripts.
-
-Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
-
-Specifying type attributes in these contexts is unnecessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
-
-```html
-<!-- Not recommended -->
-<link rel="stylesheet" href="https://www.google.com/css/maia.css"
-    type="text/css">
-<!-- Recommended -->
-<link rel="stylesheet" href="https://www.google.com/css/maia.css">
-```
-### Formatting (Google)
-Use a new line for every block, list, or table element, and indent every such child element.
-
-Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.
-
-Also, indent them if they are child elements of a block, list, or table element.
+### Formatting 
+Every block, list, or table element should be in its own line. Child elements should also be indented.
 
 ````html
-<ul>
-  <li>Moe
-  <li>Larry
-  <li>Curly
-</ul>
+<div class="nameList">
+  <ul>
+    <li>Moe</li>
+    <li>Larry</li>
+    <li>Curly</li>
+  </ul>
+</div>
 `````
 
 ### Quotation Marks
@@ -231,6 +213,21 @@ FROM allConstituents AS ac
    WHERE constituentID = 3;
 
 ```
+
+### Table Naming
+Tables' names should have multiple words separated by underscores. Columns should be in camel case.
+
+```sql 
+CREATE TABLE abk_constituents (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+```
+
+
 ### Selecting Multiple Columns
 When selecting multiple column, a linebreak should be added after every column
 ```sql
@@ -239,5 +236,15 @@ SELECT
   productPrice,
   quantity
 FROM products
+```
+### ```WHERE``` or ```INNER JOIN```
+In a query, the ```FROM``` statement and the ```WHERE``` statement should be separated by a line break and an indent.
+```sql
+SELECT 
+   firstName,
+   lastName, 
+FROM allConstituents 
+   WHERE constituentID = 3;
+
 ```
 Thanks! :thumbsup:
