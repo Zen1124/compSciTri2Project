@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Application Project (JAM Studios)</title>
 <br>
-Logo
+<td><a href="/raiderrater">Logo</a></td>
 </head>
 <body>
 <table width="95%" border="0" cellspacing="0" cellpadding="0">
@@ -17,6 +17,10 @@ Logo
 <tr>
 <td class="column" width="25%" height="100%">!!LEFT_COLUMN!!</td>
 <td> </td>
+<td colspan="3"><center>
+!!FEED!!
+</center>
+</td>
 </tr>
 <tr>
 <td class="column" colspan="3"><center>
