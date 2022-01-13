@@ -15,6 +15,11 @@ Phone #:
 
 Help Desk:
 
+<i>(Email Code) </i>
 
+<?php 
+#Acts as a help center and can be used for administrators to assist users
+
+?>
 </body>
 </html>

@@ -15,6 +15,10 @@ Communities: <br>
 - <br>
 - <br>
 -
-
+<?php 
+/* Compiles a random group of posts from all 
+communities for the user to choose from
+*/
+?>
 </body>
 </html>
