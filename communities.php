@@ -9,9 +9,15 @@
 </head>
 <body style="background-color:#afaeee;">
 
-<td><h2>Communities </h2></td> <br>
+<td><h2>Communities </h2></td> <br> 
 
-<h4> Raider Rater ↓ </h4> <br>
+<?php /*
+Displays a general list of all communities from which users 
+can choose a specific one
+*/
+?>
+
+<h4> Raider Rater ↓ </h4> 
 Tutorial <br>
 Who are we? <br>
 </body>
