@@ -7,17 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Project (JAM Studios)</title>
 </head>
+
 <body style="background-color:#afaeee;">
-<div style='text-align:left'> 
-<a href=" ">User Profile</a> 
 
 <h2> Feed </h2>
+<div style='text-align:left'>
+<!-- Should have border around whole post, including image and comments -->
+<p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+<a href=" ">User Profile</a>
+</p>
+<img src="/raiderrater/images/mickey.png" alt = "Mickey Mouse" width = "200" height = "300">
 
-<img src="/raiderrater/mickey.png" alt = "Mickey Mouse" width = "200" height = "300">
 <br>
-(Email Code embedded for comments and upvotes)
-<br>
- <a href=" ">Comments</a> 
+
+<i>(Email Code embedded for comments and upvotes) </i> <br>
+ <a href=" ">Comments</a>
+ <br>
+
+<!-- <img src="/raiderrater/images/daBaby.png" alt = "daBaby" width = "200" height = "300"> -->
+<?php
+#Where all the user posts are displayed
+?>
  </div>
 </body>
 </html>

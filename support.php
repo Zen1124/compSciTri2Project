@@ -13,5 +13,10 @@
 
 Make a contribution!
 
+<?php
+/* Users can contribute their ideas or tips to improve the website
+*/
+?>
+
 </body>
 </html>
