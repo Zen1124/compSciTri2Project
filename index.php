@@ -7,26 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Project (JAM Studios)</title>
 </head>
+
 <body style="background-color:#afaeee;">
 
+<?php
 
-<?php /*
-  $sql = " ";
-  $number1 = 3;
-  $number2 = 5;
-  echo $number1 + $number2;
-*/
+	#Connect to database server
+	//$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater") // XAMPP
+	$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
+		or die("Error: Cannot connect to database server");
+
 ?>
 
 <?php
+
 $page_content = file_get_contents("pages/content.php");
 $page_content = str_replace("!!HEADER!!", file_get_contents("/atcs/raiderrater/header.php"),$page_content);
 $page_content = str_replace("!!LEFT_COLUMN!!", file_get_contents("/atcs/raiderrater/leftColumn.php"),$page_content);
-$page_content = str_replace("!!FOOTER!!", file_get_contents("/atcs/raiderrater/footer.php"),$page_content);
 $page_content = str_replace("!!FEED!!", file_get_contents("/atcs/raiderrater/feed.php"),$page_content);
+$page_content = str_replace("!!FOOTER!!", file_get_contents("/atcs/raiderrater/footer.php"),$page_content);
+
 
 echo $page_content;
+
+// should move these outputs into User Profile box?
+$sql = "SELECT * FROM rr_users";
+	$rs = mysqli_query($dbc, $sql);
+	while ($row = mysqli_fetch_array($rs) ) {
+		echo "<br>" . $row['userID'] . "<br>";
+		echo $row['userName'] . "<br>";
+		echo $row['userEmail'] . "<br>";
+		echo $row['firstName'] . "<br>";
+		echo $row['lastName'] . "<br>";
+	}
+
 ?>
+
 
 </body>
 </html>
