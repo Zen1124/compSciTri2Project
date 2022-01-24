@@ -27,6 +27,12 @@ $page_content = str_replace("!!LEFT_COLUMN!!", file_get_contents("/atcs/raiderra
 $page_content = str_replace("!!FEED!!", file_get_contents("/atcs/raiderrater/feed.php"),$page_content);
 $page_content = str_replace("!!FOOTER!!", file_get_contents("/atcs/raiderrater/footer.php"),$page_content);
 
+if(isset($_SESSION["firstName"])) {
+	echo "Welcome " . $_SESSION["firstName"];
+	}
+else {
+	echo "Welcome " . "_____";
+	}
 
 echo $page_content;
 
