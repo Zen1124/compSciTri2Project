@@ -25,7 +25,7 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col"> 
-						Title: <input class="form-control"name="title" pattern="[A-Za-z]+" required>
+						Title: <input class="form-control"name="title" required>
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col"> 
-						Post Content: <input class="form-control"name="postContent" pattern="[A-Za-z]+" required>
+						Post Content: <input class="form-control"name="postContent" required>
 					</div>
                 </div>
             </div>
