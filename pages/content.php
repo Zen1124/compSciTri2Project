@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Application Project (JAM Studios)</title>
 <br>
-<td><a href="/raiderrater">Logo</a></td>
+<td><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></td>
 </head>
 <body>
 <table width="95%" border="0" cellspacing="0" cellpadding="0">
