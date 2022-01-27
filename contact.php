@@ -8,7 +8,8 @@
     <title>Application Project (JAM Studios)</title>
 </head>
 <body style="background-color:#afaeee;">
-
+  <a href="index.php"> <img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></a>
+<br>
 <h3> JAM Studios </h3>
 Email: <br>
 Phone #:
@@ -17,7 +18,7 @@ Help Desk:
 
 <i>(Email Code) </i>
 
-<?php 
+<?php
 #Acts as a help center and can be used for administrators to assist users
 
 ?>

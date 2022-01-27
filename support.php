@@ -8,7 +8,8 @@
     <title>Application Project (JAM Studios)</title>
 </head>
 <body style="background-color:#afaeee;">
-
+  <a href="index.php"> <img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></a>
+<br>
 <td> </td>
 
 Make a contribution!
