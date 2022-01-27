@@ -17,9 +17,9 @@
     $dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
         or die("Error: Cannot connect to database server");
 		
-	$sql = "INSERT INTO rr_posts(postTitle, datePosted, postContent, pictureID, locationID) VALUES ( '$title', '$datePosted', '$postContent','$imageUpload', '$locationID')";	
+	$sql = "INSERT INTO rr_posts (postTitle, datePosted, userID, postContent, pictureID, locationID) VALUES ( '$title', '$datePosted', '1', '$postContent','$imageUpload', '$locationID')";	
 
-	$rs = mysqli_query($dbc, $sql);
+	$rs = mysqli_query($dbc, $sql) or die(mysqli_error($dbc));
 	
 	if ($rs) {
 		echo "<div class='alert alert-success' role='alert'>
