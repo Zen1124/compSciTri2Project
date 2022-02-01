@@ -36,14 +36,14 @@
         $rs = mysqli_query($dbc, $sql);
         while ($row = mysqli_fetch_array($rs) ) {
             echo '<div class="row">';
-            echo "<h2>" . $row['postTitle'] . "</h2>";
-            echo $row['imageID'] . "<br>";
-            echo $row['userID'] . "<br>";
-            echo $row['locationID'] . "<br>";
-            echo $row['datePosted'] . "<br>";
-            echo $row['upvoteCount'] . "<br>";
-            echo $row['downvoteCount'] . "<br>";
-            echo "</div>";
+            echo '<h2>' . $row['postTitle'] . '</h2>' . '<br>';
+            echo $row['imageID'] . '<br>';
+            echo $row['userID'] . '<br>';
+            echo $row['locationID'] . '<br>';
+            echo $row['datePosted'] . '<br>';
+            echo $row['upvoteCount'] . '<br>';
+            echo $row['downvoteCount'] . '<br>';
+            echo '</div>';
         }
     ?>
  </div>
