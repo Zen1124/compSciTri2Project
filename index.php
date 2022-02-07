@@ -37,30 +37,41 @@
 <table width="95%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 	<td colspan="3"><center>
-	<table class="column" width="100%" border="0" cellspacing="0" cellpadding="0">
-		<tr>
-			<td><a href="communities.php">Communities</a></td>
-		</tr>
-		<tr>
-			<td>
-			Sort By ↓ <br>
-			<b> New <br> <!-- Filters to sort posts on main page -->
-			Funny <br>
-			Popular <br>
-			Random <br> </b>
-			</td>
-		</tr>
-		<tr>
-			<td><a href="http://www.regis.org"></a></td>
-		</tr>
-		</table> 
+	<div class="header"><h1> Welcome To The Raider Rater</h1></div>
+		<p><a href="userSession.php">Set your username</a></p>
+		<div style='text-align:left'> <h2> Search Bar </h2> </div>
 
+		<!-- Should have search bar and header links on the same line -->
+		<h4> <a href="explore.php">Explore</a> |
+		<a href="create.php">Create</a> |
+		<a href="support.php">Support</a> |
+		<br>
+
+		Find something new! </h4>
+	</td>
+</tr>
 	</center>
 	</td>
 </tr>
 <tr>
 	<td class="column" width="25%" height="100%">
-		
+		<table class="column" width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><a href="communities.php">Communities</a></td>
+			</tr>
+			<tr>
+				<td>
+				Sort By ↓ <br>
+				<b> New <br> <!-- Filters to sort posts on main page -->
+				Funny <br>
+				Popular <br>
+				Random <br> </b>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="http://www.regis.org"></a></td>
+			</tr>
+		</table> 
 	</td>
 	<td> </td>
 	<td colspan="3"><center>
@@ -136,7 +147,7 @@ else {
 	echo "Welcome " . "_____";
 	}
 
-echo $page_content;
+//echo $page_content;
 
 // should move these outputs into User Profile box?
 $sql = "SELECT * FROM rr_users";
