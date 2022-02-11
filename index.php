@@ -20,8 +20,8 @@
 <?php
 
 	#Connect to database server
-	//$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater") // XAMPP
-	$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
+	$dbc = mysqli_connect("cs.regis.org","jisaac22","CrabKidLin3357","raiderrater") // XAMPP
+	//$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 		or die("Error: Cannot connect to database server");
 
 ?>
@@ -54,7 +54,8 @@
 	</td>
 </tr>
 <tr>
-	<td class="column" width="25%" height="100%">
+	<!-- Communities -->
+	<td class="column" width="15%" height="90%" style="text-align: center; margin: 10px; border: 3px solid red;">
 		<table class="column" width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td><a href="communities.php">Communities</a></td>
@@ -73,7 +74,6 @@
 			</tr>
 		</table> 
 	</td>
-	<td> </td>
 	<td colspan="3"><center>
 		<h2> Feed </h2>
 		<div style='text-align:left'>
@@ -91,23 +91,32 @@
 
 			<!-- <img src="/raiderrater/images/daBaby.png" alt = "daBaby" width = "200" height = "300"> -->
 			<?php
-			#Connect to database server
-			#$dbc = mysqli_connect("localhost","mantonini22webuser","","raiderrater") // Regis
-			# or die("Error: Cannot connect to database server");
 
 			#Where all the user posts are displayed
 				$sql = "SELECT * FROM rr_posts";
 				$rs = mysqli_query($dbc, $sql) or die(mysqli_error($dbc));
 				while ($row = mysqli_fetch_array($rs) ) {
-					echo '<div class="card">';
+					echo '<div class="card" style="width: 100%;">';
 					echo '<h3 class="card-header">'. $row['postTitle']. '</h2>';
-					echo $row['pictureID']. '<br>';
+					$locationID = $row['locationID'];
+					$rr_locations = mysqli_query($dbc, "SELECT * FROM rr_locations
+												WHERE locationID = $locationID ");
+					while ($loc = mysqli_fetch_array($rr_locations) ) { 
+						echo '<p>'. $loc['locationName']. ' | '. $loc['locationTypeID']. '</p>';
+						
+					}	
+					$picID = $row['pictureID'];
+					$rr_pics = mysqli_query($dbc, "SELECT * FROM rr_pics
+												WHERE pictureID = $picID ");
+					while ($pic = mysqli_fetch_array($rr_pics) ) { 
+						echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="height: 10rem;"/>';
+					}
 					echo '	<div class="card-body">';
-					echo '		<h4>'. $row['postContent']. '</h4>';
+					echo '		<p>'. $row['postContent']. '</p>';
 					echo $row['userID']. '<br>';
-					echo $row['locationID']. '<br>';
+					
 					echo $row['datePosted']. '<br>';
-					echo 'Upvotes:'. $row['upvoteCount']. ' | '. 'Downvotes:'. $row['downvoteCount']. '<br>';
+					echo 'Upvotes: '. $row['upvoteCount']. ' | '. 'Downvotes: '. $row['downvoteCount']. '<br>';
 					echo '	</div>';
 					echo '</div>';
 				}
