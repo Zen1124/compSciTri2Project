@@ -99,14 +99,16 @@
 				$sql = "SELECT * FROM rr_posts";
 				$rs = mysqli_query($dbc, $sql) or die(mysqli_error($dbc));
 				while ($row = mysqli_fetch_array($rs) ) {
-					echo '<div class="row">';
-					echo '<h2>'. $row['postTitle']. '</h2>'. '<br>';
+					echo '<div class="card">';
+					echo '<h3 class="card-header">'. $row['postTitle']. '</h2>';
 					echo $row['pictureID']. '<br>';
+					echo '	<div class="card-body">';
+					echo '		<h4>'. $row['postContent']. '</h4>';
 					echo $row['userID']. '<br>';
 					echo $row['locationID']. '<br>';
 					echo $row['datePosted']. '<br>';
-					echo $row['upvoteCount']. '<br>';
-					echo $row['downvoteCount']. '<br>';
+					echo 'Upvotes:'. $row['upvoteCount']. ' | '. 'Downvotes:'. $row['downvoteCount']. '<br>';
+					echo '	</div>';
 					echo '</div>';
 				}
 			?>
