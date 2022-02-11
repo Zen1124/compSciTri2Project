@@ -20,7 +20,7 @@
 <?php
 
 	#Connect to database server
-	//$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater") // XAMPP
+	//$dbc = mysqli_connect("localhost","maxantonini","walterowl123","raiderrater") // XAMPP
 	$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 		or die("Error: Cannot connect to database server");
 
