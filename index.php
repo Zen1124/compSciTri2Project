@@ -20,10 +20,15 @@
 <?php
 
 	#Connect to database server
-	$dbc = mysqli_connect("cs.regis.org","jisaac22","CrabKidLin3357","raiderrater") // XAMPP
-	//$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
+	//$dbc = mysqli_connect("localhost","maxantonini","walterowl123","raiderrater") // XAMPP
+	$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 		or die("Error: Cannot connect to database server");
-
+if(isset($_SESSION["firstName"])) {
+	echo "Welcome " . $_SESSION["firstName"];
+	}
+else {
+	echo "Welcome " . "_____";
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -150,13 +155,6 @@
 // $page_content = str_replace("!!LEFT_COLUMN!!", file_get_contents("/atcs/raiderrater/leftColumn.php"),$page_content);
 // //$page_content = str_replace("!!FEED!!", file_get_contents("/atcs/raiderrater/feed.php"),$page_content);
 // $page_content = str_replace("!!FOOTER!!", file_get_contents("/atcs/raiderrater/footer.php"),$page_content);
-
-if(isset($_SESSION["firstName"])) {
-	echo "Welcome " . $_SESSION["firstName"];
-	}
-else {
-	echo "Welcome " . "_____";
-	}
 
 //echo $page_content;
 
