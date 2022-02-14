@@ -64,7 +64,7 @@
 			}
 	?>
 	<br>
-	<td><a href ="index.php"> <img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"> </a></td>
+	<td><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></td>
 	<table width="95%" border="0" cellspacing="0" cellpadding="0">
 			<tr> <!--HEADER-->
 				<td colspan="3"><center>
@@ -177,14 +177,14 @@ body {
 							echo '<p id="username">'. $usr['userName']. '</p>';
 						}
 						echo '			<p id="datePosted">'. $row['datePosted']. '<br> </p>';
-						echo '			<span style="display: inline;"> <div class="upvote" style="display: inline;">Upvotes: </div>'. $row['upvoteCount']. ' | '. '<div class="downvote" style="display: inline;">Downvotes: </div>'. $row['downvoteCount'].  '<br></span>';
+						echo '			<span style="display: inline;"> <div class="upvote" style="display: inline;">
+						<span class="material-icons" style="font-size:24px;color:green;"> thumb_up </span> </div>'. $row['upvoteCount']. ' | '. '<div class="downvote" style="display: inline;">
+						<span class="material-icons" style="font-size:24px;color:red;"> thumb_down </span> </div>'. $row['downvoteCount'].  '<br></span>';
 						echo '		</div>';
 						echo '	</div>';
 						echo '</div>';
 					}
 				?>
-			<span class="material-icons" style="font-size:24px;color:green;"> thumb_up </span>
-			<span class="material-icons" style="font-size:24px;color:red;"> thumb_down </span>
 			</div>
 			</center>
 		</td>
