@@ -14,7 +14,7 @@
     <?php
 
     #Connect to database server
-    $dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
+    //$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
         or die("Error: Cannot connect to database server");
 
     ?>

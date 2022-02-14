@@ -51,7 +51,7 @@
 
 		#Connect to database server
 		//$dbc = mysqli_connect("localhost,"maxantonini","walterowl123","raiderrater") // XAMPP
-		$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
+		//$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 			or die("Error: Cannot connect to database server");
 
 		if(isset($_SESSION["firstName"])) {
@@ -126,7 +126,7 @@
 						$rr_pics = mysqli_query($dbc, "SELECT * FROM rr_pics
 													WHERE pictureID = $picID ");
 						while ($pic = mysqli_fetch_array($rr_pics) ) { 
-							echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="height: 10rem;"/>';
+							echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="height: 10rem; object-fit: cover;"/>';
 						}
 						echo '	<div class="card-body">';
 						echo '		<p>'. $row['postContent']. '</p>';
