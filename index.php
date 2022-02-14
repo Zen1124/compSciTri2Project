@@ -50,7 +50,7 @@
 	<?php
 
 		#Connect to database server
-		//$dbc = mysqli_connect("localhost,"maxantonini","walterowl123","raiderrater") // XAMPP
+		//$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater") // XAMPP
 		$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 			or die("Error: Cannot connect to database server");
 
@@ -68,7 +68,43 @@
 				<td colspan="3"><center>
 				<div class="header"><h1> Welcome To The Raider Rater</h1></div>
 					<p><a href="userSession.php">Set your username</a></p>
-					<div style='text-align:left'> <h2> Search Bar </h2> </div>
+					<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav input[type=text] {
+  float: left;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>	
+<div class="topnav" style='text-align:left'>
+	<form action="wildcardSearch.php" method="post">
+		<input name="searchString" size = "20" placeholder="Search.."> 
+	</form>
+</div>
 
 					<!-- Should have search bar and header links on the same line -->
 					<h4> <a href="explore.php">Explore</a> |
@@ -178,6 +214,7 @@
 //echo $page_content;
 
 // should move these outputs into User Profile box?
+/*
 $sql = "SELECT * FROM rr_users";
 	$rs = mysqli_query($dbc, $sql);
 	while ($row = mysqli_fetch_array($rs) ) {
@@ -187,7 +224,7 @@ $sql = "SELECT * FROM rr_users";
 		echo $row['firstName'] . "<br>";
 		echo $row['lastName'] . "<br>";
 	}
-
+*/
 ?>
 </div>
 </body>
