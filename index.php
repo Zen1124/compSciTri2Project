@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaiderRater</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	<style>	
 		.sidenav {
 			width: 140px;
@@ -62,7 +64,7 @@
 			}
 	?>
 	<br>
-	<td><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></td>
+	<td><a href ="index.php"> <img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"> </a></td>
 	<table width="95%" border="0" cellspacing="0" cellpadding="0">
 			<tr> <!--HEADER-->
 				<td colspan="3"><center>
@@ -181,6 +183,8 @@ body {
 						echo '</div>';
 					}
 				?>
+			<span class="material-icons" style="font-size:24px;color:green;"> thumb_up </span>
+			<span class="material-icons" style="font-size:24px;color:red;"> thumb_down </span>
 			</div>
 			</center>
 		</td>
