@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaiderRater</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	<style>	
 		.sidenav {
 			width: 140px;
@@ -200,7 +202,9 @@
 							echo '<p id="username">'. $usr['userName']. '</p>';
 						}
 						echo '			<p id="datePosted">'. $row['datePosted']. '<br> </p>';
-						echo '			<span style="display: inline;"> <div class="upvote" style="display: inline;">Upvotes: </div>'. $row['upvoteCount']. ' | '. '<div class="downvote" style="display: inline;">Downvotes: </div>'. $row['downvoteCount'].  '<br></span>';
+						echo '			<span style="display: inline;"> <div class="upvote" style="display: inline;">
+						<span class="material-icons" style="font-size:24px;color:green;"> thumb_up </span> </div>'. $row['upvoteCount']. ' | '. '<div class="downvote" style="display: inline;">
+						<span class="material-icons" style="font-size:24px;color:red;"> thumb_down </span> </div>'. $row['downvoteCount'].  '<br></span>';
 						echo '		</div>';
 						echo '	</div>';
 						echo '</div>';
