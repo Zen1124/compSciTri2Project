@@ -25,7 +25,7 @@
 			padding: 8px 0;
 		}
 
-		.sidenav {
+		.sidenav a {
 			padding: 6px 8px 6px 16px;
 			text-decoration: none;
 			font-size: 15px;
@@ -33,15 +33,65 @@
 			display: block;
 		}
 
+		.sidenav img {
+			padding: 6px 8px;
+		}
+
+		.sidenav p {
+			padding: 6px 4px 2px 16px;
+			text-decoration: none;
+			display: block;
+			color: black;
+			width: 100%;
+		}
+
+		.welcome {
+			padding: 6px 8px 6px 6px;
+			text-decoration: none;
+			display: block;
+			color: black;
+			width: 100%;
+		}
+
 		.sidenav a:hover {
 			color: #064579;
 		}
 		
 		.container { 
-			margin-left: 150px; /* Same width as the sidebar + left position in px */
+			margin-left: 160px; /* Same width as the sidebar + left position in px */
 			padding: 0px 10px;
 		} 
-		/* From w3 schools: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
+		/* ^From w3 schools: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
+
+		* {box-sizing: border-box;}
+
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav a {
+			float: left;
+			display: block;
+			color: black;
+			text-align: left;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		.topnav input[type=text] {
+			float: left;
+			padding: 6px;
+			margin-top: 8px;
+			margin-right: 16px;
+			border: none;
+			font-size: 17px;
+		}
+
+		.topnav input[type=text] {
+			border: 1px solid #ccc;  
+		}
 	</style>
 </head>
 
@@ -54,51 +104,16 @@
 		$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis
 			or die("Error: Cannot connect to database server");
 
-		if(isset($_SESSION["firstName"])) {
-			echo "Welcome " . $_SESSION["firstName"];
-			}
-		else {
-			echo "Welcome " . "_____";
-			}
 	?>
 	<br>
-	<td><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></td>
+	
 	<table width="95%" border="0" cellspacing="0" cellpadding="0">
 			<tr> <!--HEADER-->
 				<td colspan="3"><center>
 				<div class="header"><h1> Welcome To The Raider Rater</h1></div>
 					<p><a href="userSession.php">Set your username</a></p>
 					<style>
-* {box-sizing: border-box;}
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav input[type=text] {
-  float: left;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  border: none;
-  font-size: 17px;
-}
-
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
-}
 </style>	
 <div class="topnav" style='text-align:left'>
 	<form action="wildcardSearch.php" method="post">
@@ -118,9 +133,19 @@ body {
 		</center>
 		</td>
 	</tr>
+		
 		<div class="sidenav">
+			<?php 
+				if(isset($_SESSION["firstName"])) {
+					echo '<p class="welcome">Welcome ' . $_SESSION["firstName"]. "</p>";
+					}
+				else {
+					echo '<p class="welcome">Welcome ' . "_____". "</p>";
+				}
+			?>
+			<a href="index.php"><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></a>
 			<a href="communities.php">Communities</a>
-			Sort By ↓ <br>
+			<p> Sort By ↓ <br></p>
 			<a href=""><b> New <br></a> <!-- Filters to sort posts on main page -->
 			<a href="">Funny <br> </a>
 			<a href="">Popular <br></a>
