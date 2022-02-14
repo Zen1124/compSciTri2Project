@@ -147,7 +147,7 @@ body {
 					$sql = "SELECT * FROM rr_posts";
 					$rs = mysqli_query($dbc, $sql) or die(mysqli_error($dbc));
 					while ($row = mysqli_fetch_array($rs) ) {
-						echo '<div class="card" style="width: 100%;">';
+						echo '<div class="card" style="width: 100%; height: 400px;">';
 						echo '<h3 class="card-header">'. $row['postTitle']. '</h2>';
 						//Location & Type
 						$locationID = $row['locationID'];
@@ -162,7 +162,7 @@ body {
 						$rr_pics = mysqli_query($dbc, "SELECT * FROM rr_pics
 													WHERE pictureID = $picID ");
 						while ($pic = mysqli_fetch_array($rr_pics) ) { 
-							echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="height: 10rem; object-fit: cover;"/>';
+							echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="max-height: 10rem; object-fit: contain;"/>';
 						}
 						echo '	<div class="card-body">';
 						echo '		<p>'. $row['postContent']. '</p>';
