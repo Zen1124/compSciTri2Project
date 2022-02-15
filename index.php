@@ -178,10 +178,11 @@
 						echo '<h3 class="card-header">'. $row['postTitle']. '</h2>';
 						//Location & Type
 						$locationID = $row['locationID'];
+						$locationTypeID = $row['locationTypeID'];
 						$rr_locations = mysqli_query($dbc, "SELECT * FROM rr_locations
 													WHERE locationID = $locationID ");
 						while ($loc = mysqli_fetch_array($rr_locations) ) { 
-							echo '<h6 class="location" style="padding-left: 10px;">'. $loc['locationName']. ' | '. $loc['locationTypeID']. '</h6>';
+								echo '<h6 class="location" style="padding-left: 10px;">'. $loc['locationName']. ' | '. $loctype['locationTypeID']. '</h6>';
 							
 						}	
 						//Picture
