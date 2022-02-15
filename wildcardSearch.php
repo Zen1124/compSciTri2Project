@@ -10,14 +10,16 @@
 	</body>
 </html>
 
+<a href="index.php"><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></a>
+
 <?php
 
 $searchString = ($_POST['searchString']);
 
 	if (isset($_POST['searchString'])) 
 	{
-		$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater"); // XAMPP
-		//$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis !!
+		//$dbc = mysqli_connect("127.0.0.1:3307","maxantonini","walterowl123","raiderrater"); // XAMPP
+		$dbc = mysqli_connect("localhost","mantonini22webuser","reegmeems","raiderrater") // Regis !!
 			//or die("Error: Cannot connect to database server");
 		// SEARCH BY CUSTOMER
 		
