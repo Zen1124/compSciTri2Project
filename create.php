@@ -23,7 +23,7 @@
     Rating <br>
     <div class="container">
 		<h1>Make a post!</h1>
-		<form action="postAdd.php" method="post">
+		<form action="postAdd.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<div class="row">
 					<div class="col">
@@ -34,7 +34,8 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col">
-						Image Upload <input class="form-control" name="imageUpload"> <!--Add later-->
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
 					</div>
 				</div>
 			</div>

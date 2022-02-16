@@ -179,10 +179,12 @@
 						//Location & Type
 						$locationID = $row['locationID'];
 						$locationTypeID = $row['locationTypeID'];
-						$rr_locations = mysqli_query($dbc, "SELECT * FROM rr_locations
 													WHERE locationID = $locationID ");
+						$rr_locations = mysqli_query($dbc, "SELECT DISTINCT rr_locations.locationName, rr_location_types.locationTypeName 
+															FROM rr_locations
+																INNER JOIN rr_location_types on rr_locations.locationID = $locationID");
 						while ($loc = mysqli_fetch_array($rr_locations) ) { 
-								echo '<h6 class="location" style="padding-left: 10px;">'. $loc['locationName']. ' | '. $loctype['locationTypeID']. '</h6>';
+								echo '<h6 class="location" style="padding-left: 10px;">'. $loc['locationName']. ' | '. $loc['locationTypeName']. '</h6>';
 							
 						}	
 						//Picture
