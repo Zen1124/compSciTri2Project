@@ -12,11 +12,12 @@
 <br>
 <h3> JAM Studios </h3>
 Email: <br>
-Phone #:
+<b> mantonini22@regis.org </b> <br>
+<b> jisaac22@regis.org </b> <br>
+<b> ailliparambil22@regis.org </b> <br>
+<br>
+Phone #: (212) 288-1100
 
-Help Desk:
-
-<i>(Email Code) </i>
 
 <?php
 #Acts as a help center and can be used for administrators to assist users
