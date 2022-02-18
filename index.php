@@ -62,6 +62,11 @@
 		.container { 
 			margin-left: 160px; /* Same width as the sidebar + left position in px */
 			padding: 0px 10px;
+			/* padding: 0px 10px; */
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
 		} 
 		/* ^From w3 schools: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
 
@@ -174,15 +179,14 @@
 					$sql = "SELECT * FROM rr_posts";
 					$rs = mysqli_query($dbc, $sql) or die(mysqli_error($dbc));
 					while ($row = mysqli_fetch_array($rs) ) {
-						echo '<div class="card" style="width: 100%; height: 400px;">';
+						echo '<div class="card" style="width: 70%; height: 50%;">';
 						echo '<h3 class="card-header">'. $row['postTitle']. '</h2>';
 						//Location & Type
 						$locationID = $row['locationID'];
-						$locationTypeID = $row['locationTypeID'];
-													WHERE locationID = $locationID ");
 						$rr_locations = mysqli_query($dbc, "SELECT DISTINCT rr_locations.locationName, rr_location_types.locationTypeName 
 															FROM rr_locations
-																INNER JOIN rr_location_types on rr_locations.locationID = $locationID");
+																INNER JOIN rr_location_types on rr_locations.locationTypeID = rr_location_types.locationTypeID
+																	WHERE rr_locations.locationID = $locationID ");
 						while ($loc = mysqli_fetch_array($rr_locations) ) { 
 								echo '<h6 class="location" style="padding-left: 10px;">'. $loc['locationName']. ' | '. $loc['locationTypeName']. '</h6>';
 							
@@ -192,7 +196,7 @@
 						$rr_pics = mysqli_query($dbc, "SELECT * FROM rr_pics
 													WHERE pictureID = $picID ");
 						while ($pic = mysqli_fetch_array($rr_pics) ) { 
-							echo '<img src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="max-height: 10rem; object-fit: contain;"/>';
+							echo '<img alt="Image not found" src="'. 'images/'.$pic['fileName']. '"class="card-img-top" style="height: 10rem; object-fit: contain;"/>';
 						}
 						echo '	<div class="card-body">';
 						echo '		<p>'. $row['postContent']. '</p>';
