@@ -13,7 +13,8 @@
 <td> </td>
 
 Make a contribution!
-
+<br> 
+ <img src="images/cashApp.jpg" alt = "Cash App QR" width = "350"></a>
 <?php
 /* Users can contribute their ideas or tips to improve the website
 */

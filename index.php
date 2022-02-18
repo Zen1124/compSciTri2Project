@@ -151,7 +151,7 @@
 				}
 			?>
 			<a href="index.php"><img src="images/logo.png" alt = "Raider Rater" width = "100" height = "100"></a>
-			<a href="communities.php">Communities</a>
+			<a href="communities.php">Who are we?</a>
 			<p> Sort By ↓ <br></p>
 			<a href=""><b> New <br></a> <!-- Filters to sort posts on main page -->
 			<a href="">Funny <br> </a>
@@ -168,7 +168,6 @@
 				</p>
 				<br>
 
-				<i>(Email Code embedded for comments and upvotes) </i> <br>
 				<a href=" ">Comments</a>
 				<br>
 
